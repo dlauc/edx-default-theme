@@ -52,9 +52,14 @@ $serif: $theme-serif-font, serif;
 
 // !! davor
 
-$header-global-nav-global-li-margin: (12px 21px 0 0);
-$header-global-nav-global-li-font-size: 1em;
-
+header.global .nav-global li {
+  display: inline-block;
+  margin: 12px 21px 0 0;
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0 !important;
+}
 // 
 
 //-----------------
