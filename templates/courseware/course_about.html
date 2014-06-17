@@ -247,7 +247,7 @@
                     number=course.number,
                     title=get_course_about_section(course, 'title'),
                     # !! promijenio dl 17.6
-                    #account=microsite.get_value('course_about_twitter_account', settings.PLATFORM_TWITTER_ACCOUNT),
+                    # account=microsite.get_value('course_about_twitter_account', settings.PLATFORM_TWITTER_ACCOUNT),
                     account='@croatopica',
                     url=u"http://{domain}{path}".format(
                         domain=site_domain,
@@ -258,7 +258,7 @@
 
                 # !! promijenio dl 17.6
                 # facebook_link = microsite.get_value('course_about_facebook_link', settings.PLATFORM_FACEBOOK_ACCOUNT)
-                facebook_link = "www.facebook.com/croatopica"
+                facebook_link = "http://www.facebook.com/croatopica"
 
                 email_subject = u"mailto:?subject={subject}&body={body}".format(
                     subject=_("Take a course with {platform} online").format(platform=platform_name),
@@ -288,12 +288,12 @@
         </header>
 
         <ol class="important-dates">
+          <!-- !! promijenio dl 17.6  !!!! jako primitivno - isto za sve - popraviti
           <li><div class="icon course-number"></div><p>${_("Course Number")}</p><span class="course-number">${course.display_number_with_default | h}</span></li>
-          % if not course.start_date_is_still_default:
-          # !! promijenio dl 17.6  !!!! jako primitivno - isto za sve - popraviti
-          #<li><div class="icon start"></div><p>${_("Classes Start")}</p><span class="start-date">${course.start_date_text}</span></li>
-           <li><div class="icon start"></div><p>${_("Classes Start")}</p><span class="start-date">_("Academic Year 2014-2015")</span></li>
-          % endif
+          #% if not course.start_date_is_still_default:
+           <li><div class="icon start"></div><p>${_("Classes Start")}</p><span class="start-date">${course.start_date_text}</span></li> -->
+           <li><div class="icon start"></div><p>${_("Classes Start")}</p><span class="start-date">Academic Year<br/>2014-2015</span></li>
+          <!--% endif -->
             ## We plan to ditch end_date (which is not stored in course metadata),
             ## but for backwards compatibility, show about/end_date blob if it exists.
             % if get_course_about_section(course, "end_date") or course.end:
